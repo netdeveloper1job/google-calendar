@@ -21,8 +21,8 @@ export default function EventModal() {
   );
 
   useEffect(() => {
-    setSelectedTime(selectedEvent ? selectedEvent.time : selectedTime)
-  })
+    setSelectedTime(selectedEvent ? selectedEvent.time : "12:00AM")
+  },[selectedEvent])
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -85,7 +85,7 @@ export default function EventModal() {
             <span className="material-icons-outlined text-gray-400">
               schedule
             </span>
-            <div className="flex-1 grid grid-cols-[282px_minmax(150px,_1fr)]"><CustomDatepicker /> {!allDay && <TimeDropdown />}</div>
+            <div className="flex-1 grid grid-cols-[75%_minmax(25%,_1fr)]"><CustomDatepicker /> {!allDay && <TimeDropdown />}</div>
             <div></div>
             <p className="flex items-center text-sm text-gray-600 font-semibold gap-x-[10px]"><input
               type="checkbox" checked={allDay} onChange={() => setAllDay(!allDay)}

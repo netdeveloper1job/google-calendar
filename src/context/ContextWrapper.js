@@ -27,7 +27,7 @@ export default function ContextWrapper(props) {
   const [daySelected, setDaySelected] = useState(dayjs());
   const [showEventModal, setShowEventModal] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
-  const [selectedTime, setSelectedTime] = useState("12:00AM");
+  const [selectedTime, setSelectedTime] = useState(null);
   const [labels, setLabels] = useState([]);
   const [selectedView, setSelectedView] = useState("Month");
   const [savedEvents, dispatchCalEvent] = useReducer(
